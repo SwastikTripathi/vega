@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "width": 420,
+  "height": 160,
+  "padding": 10,
+  "data": [
+    {
+      "name": "paths",
+      "values": [
+        {"label": "S after M", "d": "M 10,40 S 60,120 110,40"},
+        {"label": "S after L", "d": "M 150,40 L 170,40 S 220,120 260,40"},
+        {"label": "T after C", "d": "M 300,40 C 300,100 340,100 340,40 T 400,40"}
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "from": {"data": "paths"},
+      "encode": {
+        "enter": {
+          "path": {"field": "d"},
+          "stroke": {"value": "steelblue"},
+          "strokeWidth": {"value": 3}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "encode": {
+        "enter": {
+          "x": {"value": 210},
+          "y": {"value": 130},
+          "size": {"value": 2500},
+          "shape": {"value": "M -1,0 S 0,1 1,0"},
+          "stroke": {"value": "firebrick"},
+          "strokeWidth": {"value": 3}
+        }
+      }
+    }
+  ]
+}
